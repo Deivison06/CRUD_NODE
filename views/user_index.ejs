@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - MEDICOs</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>
+            <%= title %>
+        </h2>
+        <a href="/add" class="btn btn-sm btn-primary">Add Medico</a><br /><br />
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>NOME</th>
+                    <th>CPF</th>
+                    <th>RG</th>
+                    <th>CRM</th>
+                    <th>ENDEREÇO</th>
+                    <th>TELEFONE</th>
+                    <th>SEXO</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% medico.forEach(function(medicos){ %>
+                    <tr>
+                        <td>
+                            <%= medicos.id %>
+                        </td>
+                        <td>
+                            <%= medicos.nome %>
+                        </td>
+                        <td>
+                            <%= medicos.cpf %>
+                        </td>
+                        <td>
+                            <%= medicos.rg %>
+                        </td>
+                        <td>
+                            <%= medicos.crm %>
+                        </td>
+                        <td>
+                            <%= medicos.endereco %>
+                        </td>
+                        <td>
+                            <%= medicos.telefone %>
+                        </td>
+                        <td>
+                            <%= medicos.sexo %>
+                        </td>
+                        <td>
+                            <a href="edit/<%= medicos.id %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="delete/<%= medicos.id %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

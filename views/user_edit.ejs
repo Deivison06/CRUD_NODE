@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            <%= title %>
+        </h2>
+        <form action="/update" method="post">
+            <input type="hidden" value="<%= medico.id %>" name="id">
+            <div class="form-group">
+                <label for="name">nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="Enter nome" value="<%= medico.name %>"
+                    name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">cpf:</label>
+                <input type="cpf" class="form-control" id="cpf" placeholder="Enter cpf" value="<%= medico.cpf %>"
+                    name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="rg">rg :</label>
+                <input type="text" class="form-control" id="rg" placeholder="rg" value="<%= medico.rg %>" name="rg"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="crm">Crm:</label>
+                <input type="text" class="form-control" id="crm" placeholder="Enter crm" value="<%= medico.crm %>" name="crm" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" placeholder="Enter endereco" value="<%= medico.endereco %>" name="endereco"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" placeholder="Enter telefone" value="<%= medico.telefone %>" name="telefone"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <input type="text" class="form-control" id="sexo" placeholder="Enter sexo" value="<%= medico.sexo %>" name="sexo" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
